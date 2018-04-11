@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class PlayerShot : MonoBehaviour {
     public int speed = 3;
     public int damage;
     

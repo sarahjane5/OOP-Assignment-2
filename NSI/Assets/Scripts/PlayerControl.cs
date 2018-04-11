@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour {
 
     private int moveSpeed = 6;
+    public GameObject shot;
 
     // Use this for initialization
     void Start () {
@@ -36,6 +37,11 @@ public class PlayerControl : MonoBehaviour {
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
             }
+        }
+
+        if (Input.GetKeyDown("space"))
+        {
+            Instantiate(shot, transform.position, Quaternion.identity);
         }
     }
 }

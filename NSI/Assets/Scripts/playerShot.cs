@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShot : MonoBehaviour {
-    public int speed = 3;
+    public int speed = 5;
     public int damage;
     
     void Start () {
@@ -16,7 +16,7 @@ public class PlayerShot : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag != "Player")
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

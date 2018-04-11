@@ -4,13 +4,38 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    private int moveSpeed = 6;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey("left"))
+        {
+            if (transform.position.x <= -6)
+            {
+                transform.Translate(0, 0, 0);
+            }
+            else
+            {
+                transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+            }
+
+        }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey("right"))
+        {
+            if (transform.position.x >= 6)
+            {
+                transform.Translate(0, 0, 0);
+            }
+            else
+            {
+                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+            }
+        }
+    }
 }
